@@ -4,7 +4,18 @@ from src.context import get_time_context, build_prompt
 from src.ollama import wait_for_ollama, generate, handle_commands
 
 
+BANNER = r"""
+         ,_,
+        (O,O)
+        (   )
+        -"-"-
+      OWL DROID
+"""
+
+
 def main():
+
+    print(BANNER)
 
     print("[BOOT] Waiting for Ollama...")
 
