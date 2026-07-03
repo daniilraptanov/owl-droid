@@ -1,13 +1,13 @@
 from src.config import LATITUDE, LONGITUDE, GIT_REPO_PATH
 from src.modules.time_context import TimeContextModule
-from src.modules.weather import WeatherModule, OpenMeteoProvider
-from src.modules.git_context import GitModule
+from src.modules.weather import WeatherContextModule, OpenMeteoProvider
+from src.modules.git_context import GitContextModule
 
 
 MODULES = [
     TimeContextModule(),
-    WeatherModule(OpenMeteoProvider(), LATITUDE, LONGITUDE),
-    GitModule(GIT_REPO_PATH),
+    WeatherContextModule(OpenMeteoProvider(), LATITUDE, LONGITUDE),
+    GitContextModule(GIT_REPO_PATH),
 ]
 
 
