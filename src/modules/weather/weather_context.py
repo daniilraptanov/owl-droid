@@ -2,7 +2,7 @@ from src.modules.base import BaseModule
 from src.modules.weather.provider import BaseWeatherProvider
 
 
-class WeatherModule(BaseModule):
+class WeatherContextModule(BaseModule):
     """Provides current weather context using a pluggable weather provider."""
 
     def __init__(self, provider, latitude, longitude):

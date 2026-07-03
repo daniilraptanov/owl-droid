@@ -1,7 +1,7 @@
 from src.config import LATITUDE, LONGITUDE, GIT_REPO_PATH
 from src.modules.time_context import TimeContextModule
 from src.modules.weather import WeatherModule, OpenMeteoProvider
-from src.modules.git import GitModule
+from src.modules.git_context import GitModule
 
 
 MODULES = [

@@ -3,7 +3,7 @@ import subprocess
 from src.modules.base import BaseModule
 
 
-class GitModule(BaseModule):
+class GitContextModule(BaseModule):
     """Provides read-only git repository context (branch, status, last commit)."""
 
     def __init__(self, repo_path):
