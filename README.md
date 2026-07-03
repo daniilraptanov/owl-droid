@@ -1,3 +1,11 @@
+```
+     ,_,
+    (O,O)
+    (   )
+    -"-"-
+  OWL DROID
+```
+
 # owl-droid
 
 **Owl Droid** is a local, terminal-first AI assistant powered by Ollama that boots with your system, understands your personal context, and helps you code, organize your workflow, and interact with your computer through extensible tools.
