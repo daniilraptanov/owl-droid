@@ -1,11 +1,13 @@
-from src.config import LATITUDE, LONGITUDE
+from src.config import LATITUDE, LONGITUDE, GIT_REPO_PATH
 from src.modules.time_context import TimeContextModule
 from src.modules.weather import WeatherModule, OpenMeteoProvider
+from src.modules.git import GitModule
 
 
 MODULES = [
     TimeContextModule(),
     WeatherModule(OpenMeteoProvider(), LATITUDE, LONGITUDE),
+    GitModule(GIT_REPO_PATH),
 ]
 
 
@@ -35,9 +37,5 @@ def build_prompt(ctx):
 
         Greet the user naturally.
 
-        Mention the current context naturally.
-
-        Suggest up to three useful things to do.
-
-        Keep the answer under one line sentence.
+        Mention each context item in one short sentence, naturally.
     """
