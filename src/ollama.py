@@ -50,7 +50,11 @@ def generate(prompt):
     return r.json()["message"]["content"]
 
 
-def handle_commands():
+def handle_commands(context=None):
+    if context is None:
+        from src.context import get_default_context
+        context = get_default_context()
+
     while True:
         try:
             user = input("\nowl> ").strip()
@@ -63,7 +67,8 @@ def handle_commands():
             if not user:
                 continue
 
-            answer = generate(user)
+            prompt = context.build_prompt(user)
+            answer = generate(prompt)
             print()
             print(answer)
 
@@ -71,3 +76,4 @@ def handle_commands():
             print("\nBye.")
             time.sleep(QUIT_TIMEOUT_SEC)
             break
+

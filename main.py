@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from src.context import get_time_context, build_prompt
+from src.context import Context
 from src.ollama import wait_for_ollama, generate, handle_commands
 
 
@@ -23,9 +23,9 @@ def main():
 
     print("[BOOT] Ollama online")
 
-    ctx = get_time_context()
+    context = Context()
 
-    prompt = build_prompt(ctx)
+    prompt = context.build_greeting_prompt()
 
     print("[BOOT] Generating greeting...\n")
 
@@ -35,7 +35,7 @@ def main():
     print(response)
     print("=" * 60)
 
-    handle_commands()
+    handle_commands(context)
 
 
 if __name__ == "__main__":
